@@ -14,7 +14,7 @@ Face mask detection adalah pendeteksian apakah seseorang menggunakan masker atau
 Deep Learning Architecture mempelajari hal penting yaitu fitur non-linier dari sampel yang diberikan. Kemudian, mempelajari arsitektur yang digunakan untuk memprediksi sampel yang sebelumnya tidak terlihat. Deep Learning Architecture sangat tergantung pada CNN. Pada Deep Learning Architecture ada beberapa tahapan yang harus dilakukan yaitu, Dataset Collection, Training, dan Deployment. 
 
 ## Dataset
-Dataset yang digunakan adalah data yang diambil dari Kaggle yaitu data Face Mask Detection milik Vijay Kumar. Data yang dikumpulkan terdapat 3 jenis class, yaitu with mask, without mask, dan mask weared incorrec. Dari data yang telah dikumpulkan diperoleh total 8982 sampel.
+Dataset yang digunakan adalah data yang diambil dari Kaggle yaitu data Face Mask Detection milik Vijay Kumar. Data yang dikumpulkan terdapat 3 jenis class, yaitu with mask, without mask, dan mask weared incorrect. Dari data yang telah dikumpulkan diperoleh total 8982 sampel.
 
 ## Algoritma Deep Learning
 
@@ -25,4 +25,4 @@ Training merupakan processing yang terfokus untuk memuat dataset face mask detec
 
 ### Proses Evaluasi
 
-### Cara Menjalankan Aplikasi
+## Cara Menjalankan Aplikasi
