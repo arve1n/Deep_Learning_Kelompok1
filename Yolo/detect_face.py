@@ -251,29 +251,20 @@ def get_faces_bbox(detect_img,model,device):
     print(len(pred[0]), 'face' if len(pred[0]) == 1 else 'faces')
 
     # Process detections
-    for i, det in enumerate(pred):  # detections per image
+    for det in pred:  # detections per image
         
         im0 = im0s.copy()
 
         if len(det):
             # Rescale boxes from img_size to im0 size
             det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
-
-            # Print results
-            for c in det[:, -1].unique():
-                n = (det[:, -1] == c).sum()  # detections per class
-
             det[:, 5:15] = scale_coords_landmarks(img.shape[2:], det[:, 5:15], im0.shape).round()
 
             faces_landmark = []
 
             for j in range(det.size()[0]):
                 xyxy = det[j, :4].view(-1).tolist()
-                conf = det[j, 4].cpu().numpy()
-                landmarks = det[j, 5:15].view(-1).tolist()
-                class_num = det[j, 15].cpu().numpy()
                 faces_landmark.append(xyxy)
-                im0 = show_results(im0, xyxy, conf, landmarks, class_num)
 
             return faces_landmark
             
