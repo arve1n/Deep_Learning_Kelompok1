@@ -5,28 +5,25 @@ from PyQt5.QtCore import QThread,pyqtSignal
 import sys
 import os
 import cv2
-import tensorflow as tf
-import mediapipe as mp
+from tensorflow.keras.models import load_model
+from tensorflow import expand_dims
+from tensorflow.image import resize,ResizeMethod
 import numpy as np
 import torch
 from Yolo.detect_face import get_faces_bbox
 from Yolo.models.experimental import attempt_load
 
-mp_drawing = mp.solutions.drawing_utils
-mp_drawing_styles = mp.solutions.drawing_styles
-mp_face_mesh = mp.solutions.face_mesh
-max_face = 3
 BASE_DIR = os.path.abspath(os.getcwd())
 TOLERANCE = 0.1
+IMAGE_SHAPE = (128,128)
 
 class Ui(QtWidgets.QMainWindow):
-
     img = None
     camState = False
-    mask_model = tf.keras.models.load_model(os.path.join(BASE_DIR, 'cnn 2-2M 128 RGB.h5'))
+    mask_model = load_model(os.path.join(BASE_DIR, 'cnn 2-2M 128 RGB.h5'))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     	
-    yolo_priority = ['yolov5n-0.5.pt','yolov5n-face','yolov5s-face','yolov5m-face','yolov5l-face']
+    yolo_priority = ['yolov5n-face.pt','yolov5s-face.pt','yolov5m-face.pt','yolov5l-face.pt']
     available_yolo = [check_yolo for check_yolo in os.listdir(os.path.join(BASE_DIR, 'Yolo')) if check_yolo.endswith('.pt')]
 
     print("Available Yolo : ",available_yolo)
@@ -35,6 +32,8 @@ class Ui(QtWidgets.QMainWindow):
             print("Using Yolo : ",yolo)
             yolo_model = attempt_load(os.path.join(BASE_DIR, 'Yolo',yolo), map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
             break
+
+    assert yolo_model is not None, "No Yolo model found"
 
     # yolo_model = attempt_load("Yolo\yolov5n-0.5.pt", map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 
@@ -64,7 +63,15 @@ class Ui(QtWidgets.QMainWindow):
         self.camWorker = CamWorker()
         self.camWorker.setModel(self.mask_model,self.yolo_model,self.device)
 
+        self.setupTensorflow()
         self.show()
+
+    def setupTensorflow(self):
+        pred_image = np.zeros((IMAGE_SHAPE[0],IMAGE_SHAPE[1],3),dtype=np.uint8)
+        pred_image = pred_image/255.0
+        pred_image = expand_dims(pred_image, axis=0)
+        pred = np.argmax(self.mask_model.predict(pred_image), axis=1)
+        pass
 
     def clearUI(self):
         self.camera_ui.clear()
@@ -169,9 +176,9 @@ class Ui(QtWidgets.QMainWindow):
                     face_end_point = int(face[2]*(1+TOLERANCE)),int(face[3]*(1+TOLERANCE))
                     cropped_image = rgb_im[face_start_point[1]:face_end_point[1],face_start_point[0]:face_end_point[0]]
                 
-                    pred_image = tf.image.resize(cropped_image, [128,128], method=tf.image.ResizeMethod.BICUBIC)
+                    pred_image = resize(cropped_image, [IMAGE_SHAPE[0],IMAGE_SHAPE[1]], method=ResizeMethod.BICUBIC)
                     pred_image = pred_image/255.0
-                    pred_image = tf.expand_dims(pred_image, axis=0)
+                    pred_image = expand_dims(pred_image, axis=0)
                     pred = np.argmax(self.mask_model.predict(pred_image), axis=1)
 
                     label,color = Num2Label(pred[0])
@@ -233,9 +240,9 @@ class CamWorker(QThread):
                     face_end_point = int(face[2]*(1+TOLERANCE)),int(face[3]*(1+TOLERANCE))
                     cropped_image = prediction_img[face_start_point[1]:face_end_point[1],face_start_point[0]:face_end_point[0]]
                 
-                    pred_image = tf.image.resize(cropped_image, [128,128], method=tf.image.ResizeMethod.BICUBIC)
+                    pred_image = resize(cropped_image, [IMAGE_SHAPE[0],IMAGE_SHAPE[1]], method=ResizeMethod.BICUBIC)
                     pred_image = pred_image/255.0
-                    pred_image = tf.expand_dims(pred_image, axis=0)
+                    pred_image = expand_dims(pred_image, axis=0)
                     pred = np.argmax(self.mask_model.predict(pred_image), axis=1)
 
                     label,color = Num2Label(pred[0])
