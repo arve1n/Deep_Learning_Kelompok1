@@ -26,3 +26,8 @@ Training merupakan processing yang terfokus untuk memuat dataset face mask detec
 ### Proses Evaluasi
 
 ## Cara Menjalankan Aplikasi
+1. Download yolov5-face pretrain model yang ingin digunakan pada https://github.com/deepcam-cn/yolov5-face (disarankan menggunakan model yang kecil)
+2. Letakkan yolo model yang telah didowload pada folder Yolo
+3. Konfigurasikan sistem yolo yang ingin digunakan pada bagian attempt_load line 28 (secara default akan digunakan model pertama yang ditemukan dalam folder yolo)
+
+    image.png
