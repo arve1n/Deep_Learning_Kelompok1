@@ -23,9 +23,9 @@ class Ui(QtWidgets.QMainWindow):
 
     img = None
     camState = False
-    mask_model = tf.keras.models.load_model(os.path.join(BASE_DIR, 'cnn_model.h5'))
+    mask_model = tf.keras.models.load_model(os.path.join(BASE_DIR, 'cnn 2-2M 128 RGB.h5'))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    yolo_model = attempt_load('Yolo/yolov5m-face.pt', map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu")) 
+    yolo_model = attempt_load('Yolo\yolov5n-0.5.pt', map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu")) 
 
     def __init__(self):
         super(Ui, self).__init__()
