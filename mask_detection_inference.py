@@ -27,11 +27,14 @@ class Ui(QtWidgets.QMainWindow):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     	
     yolo_priority = ['yolov5n-0.5.pt','yolov5n-face','yolov5s-face','yolov5m-face','yolov5l-face']
-    for check_yolo in os.listdir(os.path.join(BASE_DIR, 'Yolo')):
-        if check_yolo.endswith('.pt'):
-            if check_yolo in yolo_priority:
-                yolo_model = attempt_load(os.path.join(BASE_DIR, 'Yolo', check_yolo), map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
-                break
+    available_yolo = [check_yolo for check_yolo in os.listdir(os.path.join(BASE_DIR, 'Yolo')) if check_yolo.endswith('.pt')]
+
+    print("Available Yolo : ",available_yolo)
+    for yolo in yolo_priority:
+        if yolo in available_yolo:
+            print("Using Yolo : ",yolo)
+            yolo_model = attempt_load(os.path.join(BASE_DIR, 'Yolo',yolo), map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
+            break
 
     # yolo_model = attempt_load("Yolo\yolov5n-0.5.pt", map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu"))
 
