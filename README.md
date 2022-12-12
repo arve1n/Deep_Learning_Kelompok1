@@ -28,11 +28,18 @@ Proses ini dilakukan untuk menganilisis data-data yang relevan karena sering dit
 2) Data Cleaning
 Hal ini dilakukan agar tidak ada duplikasi data sehingga data tersebut dapat diolah dan dilakukan proses pembuatan model.
 3) Face Cropping
-Pembagian pada bagian wajah ini terdiri dari 2 (dua) label yaitu bagian wajah yang memakai masker dan bagian wajah yang tidak memakai masker. Hal ini bertujuan agar saat proses pengolahan dataset menjadi model Machine Learning hanya bagian wajah saja yang kan dilakukan proses training sehingga bagian selain wajah tidak perlu dilakukan pencocokan. Proses face cropping ini menggunakan algoritma Haar Cascade sebagai pendeteksi wajahnya.
+Pembagian pada bagian wajah ini terdiri dari 3 (tiga) label yaitu bagian wajah yang memakai masker, bagian wajah yang tidak memakai masker, serta wajah dengan penggunaan masker yang salah. Hal ini bertujuan agar saat proses pengolahan dataset menjadi model hanya bagian wajah saja yang kan dilakukan proses training sehingga bagian selain wajah tidak perlu dilakukan pencocokan. Proses face cropping ini menggunakan algoritma Haar Cascade sebagai pendeteksi wajahnya.
 4) Resize Ukuran Image pada Dataset
 Pada tahap ini akan dilakukan pengolahan dataset dengan cara mengecilkan atau mengatur image size dari dataset yang telah dikumpulkan. Hal ini bertujuan agar saat penginputan dan proses classification pada arsitektur MobileNetV2 menjadi seragam dan mengatasi loss accuracy atau kehilangan tingkat akurasi pada proses training. Pada proses ini image akan di resize menajadi ukuran 224 x 224 pixel.
 
 ### Membuat Model
+(ini contoh penjelasan aja) Model yang digunakan pada penelitian ini menggunakan arsitektur deep transfer learning. Transfer learning pada bidang computer vision
+didasarkan pada premis bahwa model yang dilatih pada kumpulan data besar dari gambar yang tersedia dapat digunakan sebagai model dasar untuk mengenali fitur atau bentuk objek di dunia nyata. Melalui transfer learning memungkinkan untukmenggunakan fitur ini tanpa melatih ulang model dari awal [16].
+
+Pada model deep transfer learning akan terdapat beberapa lapisan (layer) untuk mengenali sebuah objek. Lapisan pertama dan tengah model bertanggung jawab untuk mengenali bentuk dalam gambar. Misalnya, lapisan pertama dalam model pengenalan wajah manusia dapat mengenali garis, lapisan kedua lingkaran, mata lapisan ketiga, dan wajah lapisan keempat. Sekarang lapisan telah dilatih, mereka dapat digunakan dalam kumpulan data lain, yang pada penelitian ini adalah penggunaan masker wajah. Gambar berikut menunjukkan flowchartmodel yang diusulkan.
+
+![image](https://user-images.githubusercontent.com/79149921/207069065-26cb01ff-6afa-4a45-9f9a-0064a9761270.png)
+
 
 ### Proses Training
 Training merupakan processing yang terfokus untuk memuat dataset face mask detection dari penyimpanan dataset, melatih model dengan mengunakan instrument dari Keras atau TensorFlow dari dataset ini, akan membuat serial face mask detection pada penyimpanan dataset. 
