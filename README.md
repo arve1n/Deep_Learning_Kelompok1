@@ -22,7 +22,7 @@ Dataset yang digunakan adalah data yang diambil dari Kaggle yaitu data Face Mask
 Pada tahapan ini, akan dilakukan pengolahan data menggunakan data yang telah dikumpulkan. Data yang dimaksud adalah dari Kaggle yaitu data Face Mask Detection milik Vijay Kumar, data yang dikumpulkan terdapat 3 jenis class, yaitu with mask, without mask, dan mask weared incorrect.
 
 ### Data Preprocessing
-Data preprocessing merupakan beberapa proses persiapan data sebelum dilakukan proses training untuk pembuatan model Deep Learning. 
+Data preprocessing merupakan beberapa proses persiapan data sebelum dilakukan proses training untuk pembuatan model. 
 1) Data Selection
 Proses ini dilakukan untuk menganilisis data-data yang relevan karena sering ditemukan bahwa tidak semua data dibutuhkan. Pada penelitian ino kami mengunakan semua data pada dataset yaitu gambar wajah memakai masker dengan label with mask, gambar wajah tidak memakai masker dengan label without mask, dan gambar wajah dengan penggunaan masker yang salah dengan label mask weared incorrect.
 2) Data Cleaning
