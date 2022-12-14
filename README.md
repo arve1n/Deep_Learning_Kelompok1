@@ -42,7 +42,42 @@ Pada model deep transfer learning akan terdapat beberapa lapisan (layer) untuk m
 
 
 ### Proses Training
-Training merupakan processing yang terfokus untuk memuat dataset face mask detection dari penyimpanan dataset, melatih model dengan mengunakan instrument dari Keras atau TensorFlow dari dataset ini, akan membuat serial face mask detection pada penyimpanan dataset. 
+Training merupakan processing yang terfokus untuk memuat dataset face mask detection dari penyimpanan dataset, melatih model dengan mengunakan instrument dari Keras atau TensorFlow dari dataset ini, akan membuat serial face mask detection pada penyimpanan dataset. Berikut merupakan langkah-langkah yang dilakukan pada proses training.
+
+#### Face Segmentation
+(penjelasan)
+1. Download Yolov5-face smallest weights
+2. Load Model
+3. Extract faces from image
+4. Get bounding box
+
+#### Proses Training Model Mask Detection
+1. Pengecekan jumlah data pada setiap class
+Jumlah foto setiap class sudah sama yaitu masing-masing sebanyak 2994 data,  sehingga data siap memasuki tahap augmentasi.
+
+![image](https://user-images.githubusercontent.com/79149921/207525158-f6bf184b-8c2a-4713-b383-a16cd187de2e.png)
+
+2. Augmentasi Data
+
+![image](https://user-images.githubusercontent.com/79149921/207525401-df72a39c-bb8d-486d-b183-a179da0b7acf.png)
+
+Output Augmentasi :
+Training = 5748 Gambar untuk 3 Class
+Validation = 1437 Gambar untuk 3 Class
+Test = 1797 Gambar untuk 3 Class
+
+3. Modelling Data
+
+![image](https://user-images.githubusercontent.com/79149921/207525666-1f3aa693-092d-4103-87a3-e07986ea3394.png)
+
+4. Training Model
+
+![image](https://user-images.githubusercontent.com/79149921/207525967-44479d98-18ce-481b-a2a9-ad3e5d17c0fb.png)
+![image](https://user-images.githubusercontent.com/79149921/207526030-d7d3fca6-d0e5-46a9-906b-cb6b766cb76c.png)
+
+Compiler = Adams
+Metrics= Accuracy
+Jumlah Epoch= 50 Epochs
 
 ### Proses Testing
 Proses Testing data menggunakan 6 jenis model yang berbeda diantaranya 4 model CNN lalu Resnet50 dan EfficientNetB0
