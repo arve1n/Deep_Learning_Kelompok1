@@ -5,7 +5,7 @@
 3. I Putu Kevin Ari Narayana (1905551030) - ([@arve1n](https://www.github.com/arve1n))
 4. Luh Putu Murniasih Pertiwi (1905551038) - ([@murniasihpertiwi](https://www.github.com/murniasihpertiwi))
 
-# Real Time Face Mask Detection berbasis Desktop
+# Real Time Face Mask Detection berbasis Desktop Menggunakan Model CNN
 
 ## Deskripsi Aplikasi
 Face mask detection adalah pendeteksian apakah seseorang menggunakan masker atau tidak menggunakan masker. Dimana kami menggunakan metode Convolutional Neural Networks (CNN). Algoritma pembelajaran Convolutional Neural Networks memanfaatkan ekstraksi fitur dari citra yang nanti akan dipelajari oleh beberapa hidden layer. Sistem ini menggunakan kombinasi klasifikasi deteksi objek, gambar, dan pelacakan objek sehingga dapat mengembangkan sistem yang mendeteksi wajah bermasker atau tidak bermasker dalam gambar atau video secara realtime. Dataset yang diambil bervariasi dengan gambar wajah menggunakan hijab, topi dan tidak menggunakan atribut. Selain itu, gambar yang diambil dari berbagai negara seperti asia, eropa dan amerika.
@@ -45,7 +45,7 @@ Pada model deep transfer learning akan terdapat beberapa lapisan (layer) untuk m
 Training merupakan processing yang terfokus untuk memuat dataset face mask detection dari penyimpanan dataset, melatih model dengan mengunakan instrument dari Keras atau TensorFlow dari dataset ini, akan membuat serial face mask detection pada penyimpanan dataset. Berikut merupakan langkah-langkah yang dilakukan pada proses training.
 
 #### Face Segmentation
-(penjelasan)
+
 1. Download Yolov5-face smallest weights
 2. Load Model
 3. Extract faces from image
@@ -56,9 +56,10 @@ Training merupakan processing yang terfokus untuk memuat dataset face mask detec
 
 ![image](https://user-images.githubusercontent.com/79149921/207525158-f6bf184b-8c2a-4713-b383-a16cd187de2e.png)
 
-Jumlah foto setiap class sudah sama yaitu masing-masing sebanyak 2994 data,  sehingga data siap memasuki tahap augmentasi.
+Jumlah foto setiap class sudah sama yaitu masing-masing sebanyak 2994 data, sehingga data siap memasuki tahap augmentasi.
 
 2. Augmentasi Data
+Augemntasi gambar adalah teknik yang berguna untuk memperluas data pelatihan model tanpa perlu mencari data tambahan. Augmentasi gambar, adalah tindakan mereplika gambar yang ada dengan berbagai penyesuaian untuk memperbanyak data latih. Memperbesar ukuran gambar +/-20%, flip horizontal, mengubah kecerahan +/-20%, dan memutar gambar -/+10% merupakan teknik yang digunakan untuk meningkatkan jumlah data latih. Model terlatih akan lebih realistis dari kondisi dunia nyata dan akan mampu beradaptasi dengan berbagai perubahan kondisi yang ada.
 
 ![image](https://user-images.githubusercontent.com/79149921/207525401-df72a39c-bb8d-486d-b183-a179da0b7acf.png)
 
@@ -88,8 +89,8 @@ Proses Testing data menggunakan 6 jenis model yang berbeda diantaranya 4 model C
 ![image](https://user-images.githubusercontent.com/79149921/207531794-54924ab4-686d-4da5-b8c6-453cdbc90e5b.png)
 
 Hasil Test Set
--Loss = 0.1544
--Accuracy = 0.9694
+- Loss = 0.1544
+- Accuracy = 0.9694
 
 #### Fully CNN
 
@@ -123,6 +124,7 @@ Akurasi : 0.90
 
 
 ### Proses Evaluasi
+(penjelasan)
 
 ## Cara Menjalankan Aplikasi
 1. Download yolov5-face pretrain model yang ingin digunakan pada https://github.com/deepcam-cn/yolov5-face (disarankan menggunakan model yang kecil)
