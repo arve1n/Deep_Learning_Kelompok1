@@ -20,7 +20,7 @@ IMAGE_SHAPE = (128,128)
 class Ui(QtWidgets.QMainWindow):
     img = None
     camState = False
-    mask_model = load_model(os.path.join(BASE_DIR, 'cnn 2-2M 128 RGB.h5'))
+    mask_model = load_model(os.path.join(BASE_DIR,'mask_model', 'cnn 2-2M 128 RGB.h5'))
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     	
     yolo_priority = ['yolov5n-face.pt','yolov5s-face.pt','yolov5m-face.pt','yolov5l-face.pt']
