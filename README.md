@@ -53,18 +53,19 @@ Training merupakan processing yang terfokus untuk memuat dataset face mask detec
 
 #### Proses Training Model Mask Detection
 1. Pengecekan jumlah data pada setiap class
-Jumlah foto setiap class sudah sama yaitu masing-masing sebanyak 2994 data,  sehingga data siap memasuki tahap augmentasi.
 
 ![image](https://user-images.githubusercontent.com/79149921/207525158-f6bf184b-8c2a-4713-b383-a16cd187de2e.png)
+
+Jumlah foto setiap class sudah sama yaitu masing-masing sebanyak 2994 data,  sehingga data siap memasuki tahap augmentasi.
 
 2. Augmentasi Data
 
 ![image](https://user-images.githubusercontent.com/79149921/207525401-df72a39c-bb8d-486d-b183-a179da0b7acf.png)
 
 Output Augmentasi :
-Training = 5748 Gambar untuk 3 Class
-Validation = 1437 Gambar untuk 3 Class
-Test = 1797 Gambar untuk 3 Class
+- Training = 5748 Gambar untuk 3 Class
+- Validation = 1437 Gambar untuk 3 Class
+- Test = 1797 Gambar untuk 3 Class
 
 3. Modelling Data
 
@@ -75,9 +76,9 @@ Test = 1797 Gambar untuk 3 Class
 ![image](https://user-images.githubusercontent.com/79149921/207525967-44479d98-18ce-481b-a2a9-ad3e5d17c0fb.png)
 ![image](https://user-images.githubusercontent.com/79149921/207526030-d7d3fca6-d0e5-46a9-906b-cb6b766cb76c.png)
 
-Compiler = Adams
-Metrics= Accuracy
-Jumlah Epoch= 50 Epochs
+- Compiler = Adams
+- Metrics= Accuracy
+- Jumlah Epoch= 50 Epochs
 
 ### Proses Testing
 Proses Testing data menggunakan 6 jenis model yang berbeda diantaranya 4 model CNN lalu Resnet50 dan EfficientNetB0
