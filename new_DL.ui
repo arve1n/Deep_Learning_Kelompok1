@@ -892,7 +892,6 @@ QSlider::handle:vertical:pressed {
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton {
-	background-image: url(:/24x24/icons/24x24/cil-menu.png);
 	background-position: center;
 	background-repeat: no-reperat;
 	border: none;
@@ -907,6 +906,16 @@ QPushButton:pressed {
                </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>C:/Users/HP/Downloads/icons8-xbox-menu-64.png</normaloff>C:/Users/HP/Downloads/icons8-xbox-menu-64.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -1123,8 +1132,8 @@ QPushButton:pressed {
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="files.qrc">
-                       <normaloff>:/16x16/icons/16x16/cil-window-minimize.png</normaloff>:/16x16/icons/16x16/cil-window-minimize.png</iconset>
+                      <iconset>
+                       <normaloff>C:/Users/HP/Downloads/icons8-subtract-48.png</normaloff>C:/Users/HP/Downloads/icons8-subtract-48.png</iconset>
                      </property>
                     </widget>
                    </item>
@@ -1167,8 +1176,8 @@ QPushButton:pressed {
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="files.qrc">
-                       <normaloff>:/16x16/icons/16x16/cil-window-maximize.png</normaloff>:/16x16/icons/16x16/cil-window-maximize.png</iconset>
+                      <iconset>
+                       <normaloff>C:/Users/HP/Downloads/icons8-expand-30.png</normaloff>C:/Users/HP/Downloads/icons8-expand-30.png</iconset>
                      </property>
                     </widget>
                    </item>
@@ -1211,8 +1220,8 @@ QPushButton:pressed {
                       <string/>
                      </property>
                      <property name="icon">
-                      <iconset resource="files.qrc">
-                       <normaloff>:/16x16/icons/16x16/cil-x.png</normaloff>:/16x16/icons/16x16/cil-x.png</iconset>
+                      <iconset>
+                       <normaloff>C:/Users/HP/Downloads/icons8-close-48.png</normaloff>C:/Users/HP/Downloads/icons8-close-48.png</iconset>
                      </property>
                     </widget>
                    </item>
@@ -1391,13 +1400,35 @@ QPushButton:pressed {
               </widget>
              </item>
              <item>
+              <spacer name="verticalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Minimum</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
               <widget class="QPushButton" name="pushButton_2">
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/20x20/cil-description.png</normaloff>icons/20x20/cil-description.png</iconset>
+                 <normaloff>C:/Users/HP/Downloads/icons8-home-page-50.png</normaloff>C:/Users/HP/Downloads/icons8-home-page-50.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -1427,7 +1458,13 @@ QPushButton:pressed {
                </property>
                <property name="icon">
                 <iconset>
-                 <normaloff>icons/20x20/cil-code.png</normaloff>icons/20x20/cil-code.png</iconset>
+                 <normaloff>C:/Users/HP/Downloads/icons8-protection-mask-50.png</normaloff>C:/Users/HP/Downloads/icons8-protection-mask-50.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -1660,6 +1697,9 @@ font-color: brown;</string>
                           <string notr="true">background-color: rgb(39, 44, 54);
 font-color: white;</string>
                          </property>
+                         <property name="tabShape">
+                          <enum>QTabWidget::Triangular</enum>
+                         </property>
                          <property name="currentIndex">
                           <number>0</number>
                          </property>
@@ -1702,24 +1742,28 @@ QWidget:pressed {
                              <widget class="QPushButton" name="pushButton_4">
                               <property name="font">
                                <font>
-                                <family>Segoe UI</family>
-                                <pointsize>9</pointsize>
+                                <family>Microsoft YaHei UI</family>
+                                <pointsize>10</pointsize>
                                 <weight>75</weight>
+                                <italic>false</italic>
                                 <bold>true</bold>
                                </font>
                               </property>
                               <property name="styleSheet">
                                <string notr="true">QPushButton {
-	border: 2px solid rgb(52, 59, 72);
-	border-radius: 5px;	
-	background-color: rgb(52, 59, 72);
+font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+font-weight: bold;
+color: rgb(255, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
+border-style: solid;
+border-radius:21px;
 }
 QPushButton:hover {
-	background-color: rgb(57, 65, 80);
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
 	border: 2px solid rgb(61, 70, 86);
 }
 QPushButton:pressed {	
-	background-color: rgb(35, 40, 49);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
 	border: 2px solid rgb(43, 50, 61);
 }</string>
                               </property>
@@ -1728,7 +1772,7 @@ QPushButton:pressed {
                               </property>
                               <property name="icon">
                                <iconset>
-                                <normaloff>C:/Users/HP/Downloads/st_small_507x507-pad_600x600_f8f8f8-removebg-preview.png</normaloff>C:/Users/HP/Downloads/st_small_507x507-pad_600x600_f8f8f8-removebg-preview.png</iconset>
+                                <normaloff>C:/Users/HP/Downloads/icons8-folder-100.png</normaloff>C:/Users/HP/Downloads/icons8-folder-100.png</iconset>
                               </property>
                               <property name="iconSize">
                                <size>
@@ -1765,22 +1809,28 @@ QPushButton:pressed {
                               </property>
                               <property name="font">
                                <font>
+                                <family>Microsoft YaHei UI</family>
+                                <pointsize>10</pointsize>
                                 <weight>75</weight>
+                                <italic>false</italic>
                                 <bold>true</bold>
                                </font>
                               </property>
                               <property name="styleSheet">
-                               <string notr="true">QPushButton {
-	border: 2px solid rgb(52, 59, 72);
-	border-radius: 5px;	
-	background-color: rgb(52, 59, 72);
+                               <string notr="true">QPushButton{
+font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+font-weight: bold;
+color: rgb(255, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
+border-style: solid;
+border-radius:21px;
 }
 QPushButton:hover {
-	background-color: rgb(57, 65, 80);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
 	border: 2px solid rgb(61, 70, 86);
 }
 QPushButton:pressed {	
-	background-color: rgb(35, 40, 49);
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
 	border: 2px solid rgb(43, 50, 61);
 }</string>
                               </property>
@@ -1789,7 +1839,7 @@ QPushButton:pressed {
                               </property>
                               <property name="icon">
                                <iconset>
-                                <normaloff>icons/16x16/cil-camera.png</normaloff>icons/16x16/cil-camera.png</iconset>
+                                <normaloff>Windows/icons8-video-stabilization-windows-11-color-70.png</normaloff>Windows/icons8-video-stabilization-windows-11-color-70.png</iconset>
                               </property>
                              </widget>
                             </item>
@@ -1833,7 +1883,33 @@ QPushButton:pressed {
                              </spacer>
                             </item>
                             <item>
-                             <widget class="QComboBox" name="comboBox"/>
+                             <widget class="QComboBox" name="comboBox">
+                              <property name="styleSheet">
+                               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));</string>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                          <widget class="QWidget" name="verticalLayoutWidget">
+                           <property name="geometry">
+                            <rect>
+                             <x>579</x>
+                             <y>0</y>
+                             <width>261</width>
+                             <height>481</height>
+                            </rect>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_7">
+                            <item>
+                             <widget class="QLabel" name="label_4">
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                              </property>
+                             </widget>
                             </item>
                            </layout>
                           </widget>
