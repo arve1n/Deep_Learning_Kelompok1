@@ -81,7 +81,46 @@ Output Augmentasi :
 - Jumlah Epoch= 50 Epochs
 
 ### Proses Testing
-Proses Testing data menggunakan 6 jenis model yang berbeda diantaranya 4 model CNN lalu Resnet50 dan EfficientNetB0
+Proses Testing data menggunakan 6 jenis model yang berbeda diantaranya 4 model CNN lalu Resnet50 dan EfficientNetB0. Berikut ini merupakan perbandingan dari masing-masing model yang telah dicoba.
+
+#### CNN Model
+
+![image](https://user-images.githubusercontent.com/79149921/207531794-54924ab4-686d-4da5-b8c6-453cdbc90e5b.png)
+
+Hasil Test Set
+-Loss = 0.1544
+-Accuracy = 0.9694
+
+#### Fully CNN
+
+![image](https://user-images.githubusercontent.com/79149921/207532083-b26849ab-8b58-4aad-8cc6-fc0c12e5d303.png)  ![image](https://user-images.githubusercontent.com/79149921/207532198-45798084-93f6-48ef-a24c-07a1415d8f95.png)
+
+Akurasi : 0.9129
+
+#### CNN Model 2
+
+![image](https://user-images.githubusercontent.com/79149921/207532418-6b4e4298-b7a9-4100-bc87-157bb79df6e2.png)  ![image](https://user-images.githubusercontent.com/79149921/207532535-1e2c3770-2030-4d7d-a98d-a4feecb1b2b1.png)
+
+Akurasi : 0.8896
+
+#### CNN Model 3
+
+![image](https://user-images.githubusercontent.com/79149921/207532764-bd4c03b4-c0fb-42fc-b3cc-833c655ca78f.png)  ![image](https://user-images.githubusercontent.com/79149921/207532850-13473646-dbd7-4a32-b91c-ce34daeff5cd.png)
+
+Akurasi : 0.8883
+
+#### EffNet
+
+![image](https://user-images.githubusercontent.com/79149921/207532999-75235292-d517-47e2-8976-a75b77850fc3.png)  ![image](https://user-images.githubusercontent.com/79149921/207533080-b77c2db0-86fb-4efe-a04e-eca5ded6f833.png)
+
+Akurasi : 0.9472
+
+#### ResNett
+
+![image](https://user-images.githubusercontent.com/79149921/207533317-7c6bd705-a5b9-4337-a114-f9da64ab3b09.png)  ![image](https://user-images.githubusercontent.com/79149921/207533424-55bd60c6-0c7a-42d2-968a-a9a57b7dcbd7.png)
+
+Akurasi : 0.90
+
 
 ### Proses Evaluasi
 
