@@ -5,7 +5,7 @@
 3. I Putu Kevin Ari Narayana (1905551030) - ([@arve1n](https://www.github.com/arve1n))
 4. Luh Putu Murniasih Pertiwi (1905551038) - ([@murniasihpertiwi](https://www.github.com/murniasihpertiwi))
 
-# Real Time Face Mask Detection berbasis ...
+# Real Time Face Mask Detection berbasis Desktop
 
 ## Deskripsi Aplikasi
 Face mask detection adalah pendeteksian apakah seseorang menggunakan masker atau tidak menggunakan masker. Dimana kami menggunakan metode Convolutional Neural Networks (CNN). Algoritma pembelajaran Convolutional Neural Networks memanfaatkan ekstraksi fitur dari citra yang nanti akan dipelajari oleh beberapa hidden layer. Sistem ini menggunakan kombinasi klasifikasi deteksi objek, gambar, dan pelacakan objek sehingga dapat mengembangkan sistem yang mendeteksi wajah bermasker atau tidak bermasker dalam gambar atau video secara realtime. Dataset yang diambil bervariasi dengan gambar wajah menggunakan hijab, topi dan tidak menggunakan atribut. Selain itu, gambar yang diambil dari berbagai negara seperti asia, eropa dan amerika.
@@ -45,6 +45,7 @@ Pada model deep transfer learning akan terdapat beberapa lapisan (layer) untuk m
 Training merupakan processing yang terfokus untuk memuat dataset face mask detection dari penyimpanan dataset, melatih model dengan mengunakan instrument dari Keras atau TensorFlow dari dataset ini, akan membuat serial face mask detection pada penyimpanan dataset. 
 
 ### Proses Testing
+Proses Testing data menggunakan 6 jenis model yang berbeda diantaranya 4 model CNN lalu Resnet50 dan EfficientNetB0
 
 ### Proses Evaluasi
 
