@@ -182,15 +182,6 @@
        </color>
       </brush>
      </colorrole>
-     <colorrole role="PlaceholderText">
-      <brush brushstyle="NoBrush">
-       <color alpha="128">
-        <red>210</red>
-        <green>210</green>
-        <blue>210</blue>
-       </color>
-      </brush>
-     </colorrole>
     </active>
     <inactive>
      <colorrole role="WindowText">
@@ -355,15 +346,6 @@
        </color>
       </brush>
      </colorrole>
-     <colorrole role="PlaceholderText">
-      <brush brushstyle="NoBrush">
-       <color alpha="128">
-        <red>210</red>
-        <green>210</green>
-        <blue>210</blue>
-       </color>
-      </brush>
-     </colorrole>
     </inactive>
     <disabled>
      <colorrole role="WindowText">
@@ -522,15 +504,6 @@
      <colorrole role="ToolTipText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>210</red>
-        <green>210</green>
-        <blue>210</blue>
-       </color>
-      </brush>
-     </colorrole>
-     <colorrole role="PlaceholderText">
-      <brush brushstyle="NoBrush">
-       <color alpha="128">
         <red>210</red>
         <green>210</green>
         <blue>210</blue>
@@ -1416,7 +1389,7 @@ QPushButton:pressed {
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="btn_page1">
                <property name="text">
                 <string/>
                </property>
@@ -1449,9 +1422,9 @@ QPushButton:pressed {
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_3">
+              <widget class="QPushButton" name="btn_page2">
                <property name="locale">
-                <locale language="Erzya" country="Russia"/>
+                <locale language="Russian" country="Russia"/>
                </property>
                <property name="text">
                 <string/>
@@ -1576,74 +1549,27 @@ QPushButton:pressed {
                     <verstretch>20</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>900</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">background: transparent;</string>
                   </property>
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="page_home">
-                   <layout class="QVBoxLayout" name="verticalLayout_10">
-                    <item>
-                     <widget class="QLabel" name="label_6">
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>40</pointsize>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color:pink;
-font-color: brown;</string>
-                      </property>
-                      <property name="text">
-                       <string>HOME</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label">
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>14</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string/>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_7">
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>15</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Page Index 0</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                  <widget class="QWidget" name="page_widgets">
-                   <layout class="QVBoxLayout" name="verticalLayout_6">
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
                     <item>
                      <widget class="QFrame" name="frame">
-                      <property name="styleSheet">
-                       <string notr="true">border-radius: 5px;</string>
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
                       </property>
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
@@ -1651,106 +1577,44 @@ font-color: brown;</string>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_15">
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_3">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>150</height>
-                       </size>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_12">
-                       <item>
-                        <widget class="QTabWidget" name="tabWidget">
-                         <property name="font">
-                          <font>
-                           <weight>75</weight>
-                           <bold>true</bold>
-                          </font>
+                      <layout class="QGridLayout" name="gridLayout">
+                       <item row="0" column="0">
+                        <layout class="QVBoxLayout" name="verticalLayout_6">
+                         <property name="sizeConstraint">
+                          <enum>QLayout::SetNoConstraint</enum>
                          </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgb(39, 44, 54);
-font-color: white;</string>
-                         </property>
-                         <property name="tabShape">
-                          <enum>QTabWidget::Triangular</enum>
-                         </property>
-                         <property name="currentIndex">
-                          <number>0</number>
-                         </property>
-                         <widget class="QWidget" name="tab_5">
-                          <property name="font">
-                           <font>
-                            <weight>75</weight>
-                            <bold>true</bold>
-                           </font>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QWidget {
-	border: 2px solid rgb(52, 59, 72);
-	border-radius: 5px;	
-	background-color: rgb(52, 59, 72);
-}
-QWidget:hover {
-	background-color: rgb(57, 65, 80);
-	border: 2px solid rgb(61, 70, 86);
-}
-QWidget:pressed {	
-	background-color: rgb(35, 40, 49);
-	border: 2px solid rgb(43, 50, 61);
-}</string>
-                          </property>
-                          <attribute name="title">
-                           <string>Image</string>
-                          </attribute>
-                          <widget class="QWidget" name="horizontalLayoutWidget_2">
-                           <property name="geometry">
-                            <rect>
-                             <x>0</x>
-                             <y>479</y>
-                             <width>851</width>
-                             <height>46</height>
-                            </rect>
+                         <item>
+                          <widget class="QLabel" name="img_detect">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
                            </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_11">
-                            <item>
-                             <widget class="QPushButton" name="pushButton_4">
-                              <property name="font">
-                               <font>
-                                <family>Microsoft YaHei UI</family>
-                                <pointsize>10</pointsize>
-                                <weight>75</weight>
-                                <italic>false</italic>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QPushButton {
+                           <property name="text">
+                            <string/>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="btn_select_img">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Microsoft YaHei UI</family>
+                             <pointsize>10</pointsize>
+                             <weight>75</weight>
+                             <italic>false</italic>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton {
 font: 75 10pt &quot;Microsoft YaHei UI&quot;;
 font-weight: bold;
 color: rgb(255, 255, 255);
@@ -1766,58 +1630,61 @@ QPushButton:pressed {
 	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
 	border: 2px solid rgb(43, 50, 61);
 }</string>
-                              </property>
-                              <property name="text">
-                               <string>Pilih Gambar</string>
-                              </property>
-                              <property name="icon">
-                               <iconset>
-                                <normaloff>C:/Users/HP/Downloads/icons8-folder-100.png</normaloff>C:/Users/HP/Downloads/icons8-folder-100.png</iconset>
-                              </property>
-                              <property name="iconSize">
-                               <size>
-                                <width>40</width>
-                                <height>40</height>
-                               </size>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </widget>
-                         <widget class="QWidget" name="tab_6">
-                          <attribute name="title">
-                           <string>Camera</string>
-                          </attribute>
-                          <widget class="QWidget" name="horizontalLayoutWidget">
-                           <property name="geometry">
-                            <rect>
-                             <x>0</x>
-                             <y>479</y>
-                             <width>851</width>
-                             <height>41</height>
-                            </rect>
                            </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_9">
-                            <item>
-                             <widget class="QPushButton" name="pushButton">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Microsoft YaHei UI</family>
-                                <pointsize>10</pointsize>
-                                <weight>75</weight>
-                                <italic>false</italic>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QPushButton{
+                           <property name="text">
+                            <string>Pilih Gambar</string>
+                           </property>
+                           <property name="icon">
+                            <iconset>
+                             <normaloff>C:/Users/HP/Downloads/icons8-folder-100.png</normaloff>C:/Users/HP/Downloads/icons8-folder-100.png</iconset>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>40</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                  <widget class="QWidget" name="page_widgets">
+                   <layout class="QVBoxLayout" name="verticalLayout_11">
+                    <item>
+                     <widget class="QFrame" name="frame_2">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout_2">
+                       <item row="1" column="0">
+                        <layout class="QHBoxLayout" name="horizontalLayout_9">
+                         <item>
+                          <widget class="QPushButton" name="btn_opencam">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Microsoft YaHei UI</family>
+                             <pointsize>10</pointsize>
+                             <weight>75</weight>
+                             <italic>false</italic>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton{
 font: 75 10pt &quot;Microsoft YaHei UI&quot;;
 font-weight: bold;
 color: rgb(255, 255, 255);
@@ -1833,87 +1700,93 @@ QPushButton:pressed {
 	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));
 	border: 2px solid rgb(43, 50, 61);
 }</string>
-                              </property>
-                              <property name="text">
-                               <string> Nyalakan Kamera</string>
-                              </property>
-                              <property name="icon">
-                               <iconset>
-                                <normaloff>Windows/icons8-video-stabilization-windows-11-color-70.png</normaloff>Windows/icons8-video-stabilization-windows-11-color-70.png</iconset>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <spacer name="horizontalSpacer">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeType">
-                               <enum>QSizePolicy::Fixed</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>20</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item>
-                             <widget class="QLabel" name="label_2">
-                              <property name="text">
-                               <string>Port</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <spacer name="horizontalSpacer_2">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeType">
-                               <enum>QSizePolicy::Fixed</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>10</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item>
-                             <widget class="QComboBox" name="comboBox">
-                              <property name="styleSheet">
-                               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                          <widget class="QWidget" name="verticalLayoutWidget">
-                           <property name="geometry">
-                            <rect>
-                             <x>579</x>
-                             <y>0</y>
-                             <width>261</width>
-                             <height>481</height>
-                            </rect>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_7">
-                            <item>
-                             <widget class="QLabel" name="label_4">
-                              <property name="text">
-                               <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
+                           <property name="text">
+                            <string> Nyalakan Kamera</string>
+                           </property>
+                           <property name="icon">
+                            <iconset>
+                             <normaloff>Windows/icons8-video-stabilization-windows-11-color-70.png</normaloff>Windows/icons8-video-stabilization-windows-11-color-70.png</iconset>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>40</width>
+                             <height>40</height>
+                            </size>
+                           </property>
                           </widget>
-                         </widget>
+                         </item>
+                         <item>
+                          <spacer name="horizontalSpacer_4">
+                           <property name="orientation">
+                            <enum>Qt::Horizontal</enum>
+                           </property>
+                           <property name="sizeType">
+                            <enum>QSizePolicy::Fixed</enum>
+                           </property>
+                           <property name="sizeHint" stdset="0">
+                            <size>
+                             <width>20</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                          </spacer>
+                         </item>
+                         <item>
+                          <widget class="QLabel" name="label_5">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="text">
+                            <string>Port</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <spacer name="horizontalSpacer_3">
+                           <property name="orientation">
+                            <enum>Qt::Horizontal</enum>
+                           </property>
+                           <property name="sizeType">
+                            <enum>QSizePolicy::Fixed</enum>
+                           </property>
+                           <property name="sizeHint" stdset="0">
+                            <size>
+                             <width>10</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                          </spacer>
+                         </item>
+                         <item>
+                          <widget class="QComboBox" name="port_selector">
+                           <property name="styleSheet">
+                            <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));</string>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>40</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="camera_detect">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
                         </widget>
                        </item>
                       </layout>
@@ -2075,8 +1948,6 @@ QPushButton:pressed {
   <tabstop>btn_close</tabstop>
   <tabstop>btn_toggle_menu</tabstop>
  </tabstops>
- <resources>
-  <include location="files.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

@@ -39,17 +39,21 @@ class Ui(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(Ui, self).__init__()
-        uic.loadUi('Face_droop.ui', self)
+        uic.loadUi('new_DL.ui', self)
+
+        self.stack_pages = self.findChild(QtWidgets.QStackedWidget, 'stackedWidget')
+        self.stack_pages.setCurrentIndex(0)
+        self.btn_page1 = self.findChild(QtWidgets.QPushButton, 'btn_page1')
+        self.btn_page1.clicked.connect(lambda: self.changePage(0))
+
+        self.btn_page2 = self.findChild(QtWidgets.QPushButton, 'btn_page2')
+        self.btn_page2.clicked.connect(lambda: self.changePage(1))
         
-        self.tabWidget.currentChanged.connect(self.tabChanged)
         self.btnOpenFile = self.findChild(QtWidgets.QPushButton, 'btn_select_img')
         self.btnOpenFile.clicked.connect(self.loadImage)
 
         self.btnOpenCam = self.findChild(QtWidgets.QPushButton, 'btn_opencam')
         self.btnOpenCam.clicked.connect(self.setCam)
-
-        self.txtImage = self.findChild(QtWidgets.QTextEdit, 'image_desc')
-        self.txtImage.setReadOnly(True)
 
         self.image_ui = self.findChild(QtWidgets.QLabel, 'img_detect')
 
@@ -66,12 +70,15 @@ class Ui(QtWidgets.QMainWindow):
         self.setupTensorflow()
         self.show()
 
+    def changePage(self, page = 0):
+        print("Change Page to : ",page)
+        self.stack_pages.setCurrentIndex(page)
+
     def setupTensorflow(self):
         pred_image = np.zeros((IMAGE_SHAPE[0],IMAGE_SHAPE[1],3),dtype=np.uint8)
         pred_image = pred_image/255.0
         pred_image = expand_dims(pred_image, axis=0)
         pred = np.argmax(self.mask_model.predict(pred_image), axis=1)
-        pass
 
     def clearUI(self):
         self.camera_ui.clear()
@@ -112,7 +119,7 @@ class Ui(QtWidgets.QMainWindow):
         _pmap = QPixmap(_pmap)
 
         (width,height) = ui.size().width(),ui.size().height()
-        imgresized = _pmap.scaled(width, height, QtCore.Qt.KeepAspectRatio)
+        imgresized = _pmap.scaled(width, height, QtCore.Qt.IgnoreAspectRatio)
 
         # test = _pmap.toImage()
         # test.pixel(0,0)
@@ -193,15 +200,6 @@ class Ui(QtWidgets.QMainWindow):
             except:
                 pass
             QMessageBox.about(self, "Error", "Gagal Memuat Gambar")
-
-    def setBoxSize(self,size):
-        size = int(size//100)
-        if size<1:
-            size = 1
-        elif size>10:
-            size = 10
-            
-        return size
     
     def showPrediction(self):
         if(self.img is not None):
