@@ -127,9 +127,13 @@ Akurasi : 0.90
 (penjelasan)
 
 ## Cara Menjalankan Aplikasi
-1. Download yolov5-face pretrain model yang ingin digunakan pada https://github.com/deepcam-cn/yolov5-face (disarankan menggunakan model yang kecil)
-2. Letakkan yolo model yang telah didowload pada folder Yolo
-3. Konfigurasikan sistem yolo yang ingin digunakan pada bagian attempt_load line 39 (secara default akan digunakan model terkecil yang ditemukan dalam folder yolo)
+= Command Interface
+1. Download dan extract isi project kedalam 1 folder
+2. Download yolov5-face pretrain model yang ingin digunakan pada https://github.com/deepcam-cn/yolov5-face (disarankan menggunakan model yang kecil)
+3. Letakkan yolo model yang telah didowload pada folder Yolo
+4. Konfigurasikan sistem yolo yang ingin digunakan pada bagian attempt_load line 39 (secara default akan digunakan model terkecil yang ditemukan dalam folder yolo)
 
 ![image](https://user-images.githubusercontent.com/24908637/206091718-36354f82-89c3-4798-a588-6cce0915d04e.png)
+
+5. Dengan membuka folder aplikasi, jalankan file mask_detection_inference.py dengan perintah "py mask_detection_inference.py" pastikan aplikasi dapat membaca asset yang dibutuhkan.
 
