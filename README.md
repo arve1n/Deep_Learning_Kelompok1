@@ -10,13 +10,19 @@
 ## Deskripsi Aplikasi
 Face mask detection adalah pendeteksian apakah seseorang menggunakan masker atau tidak menggunakan masker. Dimana kami menggunakan metode Convolutional Neural Networks (CNN). Algoritma pembelajaran Convolutional Neural Networks memanfaatkan ekstraksi fitur dari citra yang nanti akan dipelajari oleh beberapa hidden layer. Sistem ini menggunakan kombinasi klasifikasi deteksi objek, gambar, dan pelacakan objek sehingga dapat mengembangkan sistem yang mendeteksi wajah bermasker atau tidak bermasker dalam gambar atau video secara realtime. Dataset yang diambil bervariasi dengan gambar wajah menggunakan hijab, topi dan tidak menggunakan atribut. Selain itu, gambar yang diambil dari berbagai negara seperti asia, eropa dan amerika.
 
+## Dataset
+Dataset yang digunakan adalah data yang diambil dari Kaggle yaitu data Face Mask Detection milik Vijay Kumar. Data yang dikumpulkan terdapat 3 jenis class, yaitu with mask, without mask, dan mask weared incorrect. Dari data yang telah dikumpulkan diperoleh total 8982 sampel.
+
 ## Arsitektur Aplikasi
-Deep Learning Architecture mempelajari hal penting yaitu fitur non-linier dari sampel yang diberikan. Kemudian, mempelajari arsitektur yang digunakan untuk memprediksi sampel yang sebelumnya tidak terlihat. Deep Learning Architecture sangat tergantung pada CNN. Pada Deep Learning Architecture ada beberapa tahapan yang harus dilakukan yaitu, Dataset Collection, Training, dan Deployment. 
+Convolutional Neural Network (CNN) adalah salah satu jenis neural network yang biasa digunakan pada data image. CNN bisa digunakan untuk mendeteksi dan mengenali object pada sebuah image. CNN adalah sebuah teknik yang terinspirasi dari cara mamalia dan manusia dapat menghasilkan persepsi visual.
+Secara garis besar Convolutional Neural Network (CNN) tidak jauh beda dengan neural network biasanya. CNN terdiri dari neuron yang memiliki weight, bias dan activation function. Convolutional layer juga terdiri dari neuron yang tersusun sedemikian rupa sehingga membentuk sebuah filter dengan panjang dan tinggi (pixels).
+
+Pada model CNN akan terdapat beberapa lapisan (layer) untuk mengenali sebuah objek. Lapisan pertama dan tengah model bertanggung jawab untuk mengenali bentuk dalam gambar. Misalnya, lapisan pertama dalam model pengenalan wajah manusia dapat mengenali garis, lapisan kedua lingkaran, mata lapisan ketiga, dan wajah lapisan keempat. Sekarang lapisan telah dilatih, mereka dapat digunakan dalam kumpulan data lain, yang pada penelitian ini adalah penggunaan masker wajah. Gambar berikut menunjukkan flowchartmodel yang diusulkan.
 
 ![model arsitektur](https://user-images.githubusercontent.com/79149921/208701773-0c4224d8-d6f1-496f-a164-9b8861e0d720.png)
 
-## Dataset
-Dataset yang digunakan adalah data yang diambil dari Kaggle yaitu data Face Mask Detection milik Vijay Kumar. Data yang dikumpulkan terdapat 3 jenis class, yaitu with mask, without mask, dan mask weared incorrect. Dari data yang telah dikumpulkan diperoleh total 8982 sampel.
+Pada flowchart diatas layer pertama adalah melakukan input convolutional layer 2 dimensi. tahap selanjutnya yang dilakukan adalah pooling, pooling yang digunakan adalah max pooling. Misal kita gunakan max pooling 2 x 2 dengan stride 2, maka disetiap pergeseran filter, nilai maksimum pada area 2 x 2 pixel tersebut yang akan dipilih. Setelah itu barulah dilakukan Batch Normalization. Tahapan ini dilakukan sebanyak 3x, kemudian akan masuk pada tahap Global Average Pooling 2 Dimensi yang akan menghasilkan suatu output dari 3 jenis class pada dataset yaitu with mask, without mask, ataupun mask weared incorrect.
+
 
 ## Metode Penelitian
 
@@ -35,12 +41,9 @@ Pembagian pada bagian wajah ini terdiri dari 3 (tiga) label yaitu bagian wajah y
 Pada tahap ini akan dilakukan pengolahan dataset dengan cara mengecilkan atau mengatur image size dari dataset yang telah dikumpulkan. Hal ini bertujuan agar saat penginputan dan proses classification pada arsitektur Fully CNN menjadi seragam dan mengatasi loss accuracy atau kehilangan tingkat akurasi pada proses training. Pada proses ini image akan di resize menajadi ukuran 128 x 128 pixel.
 
 ### Membuat Model Fully CNN
-Convolutional Neural Network (CNN) adalah salah satu jenis neural network yang biasa digunakan pada data image. CNN bisa digunakan untuk mendeteksi dan mengenali object pada sebuah image. CNN adalah sebuah teknik yang terinspirasi dari cara mamalia dan manusia dapat menghasilkan persepsi visual.
-Secara garis besar Convolutional Neural Network (CNN) tidak jauh beda dengan neural network biasanya. CNN terdiri dari neuron yang memiliki weight, bias dan activation function. Convolutional layer juga terdiri dari neuron yang tersusun sedemikian rupa sehingga membentuk sebuah filter dengan panjang dan tinggi (pixels).
 
-Pada model deep transfer learning akan terdapat beberapa lapisan (layer) untuk mengenali sebuah objek. Lapisan pertama dan tengah model bertanggung jawab untuk mengenali bentuk dalam gambar. Misalnya, lapisan pertama dalam model pengenalan wajah manusia dapat mengenali garis, lapisan kedua lingkaran, mata lapisan ketiga, dan wajah lapisan keempat. Sekarang lapisan telah dilatih, mereka dapat digunakan dalam kumpulan data lain, yang pada penelitian ini adalah penggunaan masker wajah. Gambar berikut menunjukkan flowchartmodel yang diusulkan.
 
-![image](https://user-images.githubusercontent.com/79149921/207069065-26cb01ff-6afa-4a45-9f9a-0064a9761270.png)
+![messageImage_1671541527908](https://user-images.githubusercontent.com/79149921/208718670-ee2d72ec-8280-4ef1-ad08-867e9a0aec4b.jpg)
 
 
 ### Proses Training
@@ -124,9 +127,17 @@ Akurasi : 0.9472
 
 Akurasi : 0.90
 
-
 ### Proses Evaluasi
-(penjelasan)
+Metode evaluasi yang digunakan pada penelitian ini adalah dengan menggunakan Confusion Matrix. Evaluasi ini dilakukan untuk mengetahui seberapa baik model tersebut.
+Untuk mengetahui apakah model tersebut baik yaitu memiliki nilai loss yang rendah dan memiliki nilai accuracy yang tinggi (tidak overfitting dan tidak underfitting), berikut ini grafik hasil dari proses training tersebut.
+
+![image](https://user-images.githubusercontent.com/79149921/207531794-54924ab4-686d-4da5-b8c6-453cdbc90e5b.png)
+
+Hasil Test Set
+- Loss = 0.1544
+- Accuracy = 0.9694
+
+Berdasarkan dari Gambar tersebut, dapat disimpulkan bahwa model CNN adalah terbaik yang dapat digunakan karena model ini memiliki  nilai loss yang rendah dan memiliki nilai accuracy yang tinggi.
 
 ## Cara Menjalankan Aplikasi
 = Command Interface
