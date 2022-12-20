@@ -40,6 +40,11 @@ class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()
         uic.loadUi('new_DL.ui', self)
+        # # this will hide the title bar
+        # self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+  
+        # # set the title
+        # self.setWindowTitle("no title")
 
         self.stack_pages = self.findChild(QtWidgets.QStackedWidget, 'stackedWidget')
         self.stack_pages.setCurrentIndex(0)
