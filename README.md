@@ -35,8 +35,8 @@ Pembagian pada bagian wajah ini terdiri dari 3 (tiga) label yaitu bagian wajah y
 Pada tahap ini akan dilakukan pengolahan dataset dengan cara mengecilkan atau mengatur image size dari dataset yang telah dikumpulkan. Hal ini bertujuan agar saat penginputan dan proses classification pada arsitektur Fully CNN menjadi seragam dan mengatasi loss accuracy atau kehilangan tingkat akurasi pada proses training. Pada proses ini image akan di resize menajadi ukuran 128 x 128 pixel.
 
 ### Membuat Model Fully CNN
-(ini contoh penjelasan aja) Model yang digunakan pada penelitian ini menggunakan arsitektur Fully CNN. Transfer learning pada bidang computer vision
-didasarkan pada premis bahwa model yang dilatih pada kumpulan data besar dari gambar yang tersedia dapat digunakan sebagai model dasar untuk mengenali fitur atau bentuk objek di dunia nyata. Melalui transfer learning memungkinkan untukmenggunakan fitur ini tanpa melatih ulang model dari awal [16].
+Convolutional Neural Network (CNN) adalah salah satu jenis neural network yang biasa digunakan pada data image. CNN bisa digunakan untuk mendeteksi dan mengenali object pada sebuah image. CNN adalah sebuah teknik yang terinspirasi dari cara mamalia dan manusia dapat menghasilkan persepsi visual.
+Secara garis besar Convolutional Neural Network (CNN) tidak jauh beda dengan neural network biasanya. CNN terdiri dari neuron yang memiliki weight, bias dan activation function. Convolutional layer juga terdiri dari neuron yang tersusun sedemikian rupa sehingga membentuk sebuah filter dengan panjang dan tinggi (pixels).
 
 Pada model deep transfer learning akan terdapat beberapa lapisan (layer) untuk mengenali sebuah objek. Lapisan pertama dan tengah model bertanggung jawab untuk mengenali bentuk dalam gambar. Misalnya, lapisan pertama dalam model pengenalan wajah manusia dapat mengenali garis, lapisan kedua lingkaran, mata lapisan ketiga, dan wajah lapisan keempat. Sekarang lapisan telah dilatih, mereka dapat digunakan dalam kumpulan data lain, yang pada penelitian ini adalah penggunaan masker wajah. Gambar berikut menunjukkan flowchartmodel yang diusulkan.
 
