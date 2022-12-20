@@ -13,6 +13,8 @@ Face mask detection adalah pendeteksian apakah seseorang menggunakan masker atau
 ## Arsitektur Aplikasi
 Deep Learning Architecture mempelajari hal penting yaitu fitur non-linier dari sampel yang diberikan. Kemudian, mempelajari arsitektur yang digunakan untuk memprediksi sampel yang sebelumnya tidak terlihat. Deep Learning Architecture sangat tergantung pada CNN. Pada Deep Learning Architecture ada beberapa tahapan yang harus dilakukan yaitu, Dataset Collection, Training, dan Deployment. 
 
+![model arsitektur](https://user-images.githubusercontent.com/79149921/208701773-0c4224d8-d6f1-496f-a164-9b8861e0d720.png)
+
 ## Dataset
 Dataset yang digunakan adalah data yang diambil dari Kaggle yaitu data Face Mask Detection milik Vijay Kumar. Data yang dikumpulkan terdapat 3 jenis class, yaitu with mask, without mask, dan mask weared incorrect. Dari data yang telah dikumpulkan diperoleh total 8982 sampel.
 
@@ -28,12 +30,12 @@ Proses ini dilakukan untuk menganilisis data-data yang relevan karena sering dit
 2) Data Cleaning
 Hal ini dilakukan agar tidak ada duplikasi data sehingga data tersebut dapat diolah dan dilakukan proses pembuatan model.
 3) Face Cropping
-Pembagian pada bagian wajah ini terdiri dari 3 (tiga) label yaitu bagian wajah yang memakai masker, bagian wajah yang tidak memakai masker, serta wajah dengan penggunaan masker yang salah. Hal ini bertujuan agar saat proses pengolahan dataset menjadi model hanya bagian wajah saja yang kan dilakukan proses training sehingga bagian selain wajah tidak perlu dilakukan pencocokan. Proses face cropping ini menggunakan algoritma Haar Cascade sebagai pendeteksi wajahnya.
+Pembagian pada bagian wajah ini terdiri dari 3 (tiga) label yaitu bagian wajah yang memakai masker, bagian wajah yang tidak memakai masker, serta wajah dengan penggunaan masker yang salah. Hal ini bertujuan agar saat proses pengolahan dataset menjadi model hanya bagian wajah saja yang kan dilakukan proses training sehingga bagian selain wajah tidak perlu dilakukan pencocokan. Proses face cropping ini menggunakan algoritma Yolov5-face smallest weights sebagai pendeteksi wajahnya.
 4) Resize Ukuran Image pada Dataset
-Pada tahap ini akan dilakukan pengolahan dataset dengan cara mengecilkan atau mengatur image size dari dataset yang telah dikumpulkan. Hal ini bertujuan agar saat penginputan dan proses classification pada arsitektur MobileNetV2 menjadi seragam dan mengatasi loss accuracy atau kehilangan tingkat akurasi pada proses training. Pada proses ini image akan di resize menajadi ukuran 224 x 224 pixel.
+Pada tahap ini akan dilakukan pengolahan dataset dengan cara mengecilkan atau mengatur image size dari dataset yang telah dikumpulkan. Hal ini bertujuan agar saat penginputan dan proses classification pada arsitektur Fully CNN menjadi seragam dan mengatasi loss accuracy atau kehilangan tingkat akurasi pada proses training. Pada proses ini image akan di resize menajadi ukuran 128 x 128 pixel.
 
-### Membuat Model
-(ini contoh penjelasan aja) Model yang digunakan pada penelitian ini menggunakan arsitektur deep transfer learning. Transfer learning pada bidang computer vision
+### Membuat Model Fully CNN
+(ini contoh penjelasan aja) Model yang digunakan pada penelitian ini menggunakan arsitektur Fully CNN. Transfer learning pada bidang computer vision
 didasarkan pada premis bahwa model yang dilatih pada kumpulan data besar dari gambar yang tersedia dapat digunakan sebagai model dasar untuk mengenali fitur atau bentuk objek di dunia nyata. Melalui transfer learning memungkinkan untukmenggunakan fitur ini tanpa melatih ulang model dari awal [16].
 
 Pada model deep transfer learning akan terdapat beberapa lapisan (layer) untuk mengenali sebuah objek. Lapisan pertama dan tengah model bertanggung jawab untuk mengenali bentuk dalam gambar. Misalnya, lapisan pertama dalam model pengenalan wajah manusia dapat mengenali garis, lapisan kedua lingkaran, mata lapisan ketiga, dan wajah lapisan keempat. Sekarang lapisan telah dilatih, mereka dapat digunakan dalam kumpulan data lain, yang pada penelitian ini adalah penggunaan masker wajah. Gambar berikut menunjukkan flowchartmodel yang diusulkan.
@@ -59,7 +61,7 @@ Training merupakan processing yang terfokus untuk memuat dataset face mask detec
 Jumlah foto setiap class sudah sama yaitu masing-masing sebanyak 2994 data, sehingga data siap memasuki tahap augmentasi.
 
 2. Augmentasi Data
-Augemntasi gambar adalah teknik yang berguna untuk memperluas data pelatihan model tanpa perlu mencari data tambahan. Augmentasi gambar, adalah tindakan mereplika gambar yang ada dengan berbagai penyesuaian untuk memperbanyak data latih. Memperbesar ukuran gambar +/-20%, flip horizontal, mengubah kecerahan +/-20%, dan memutar gambar -/+10% merupakan teknik yang digunakan untuk meningkatkan jumlah data latih. Model terlatih akan lebih realistis dari kondisi dunia nyata dan akan mampu beradaptasi dengan berbagai perubahan kondisi yang ada.
+Augemntasi gambar adalah teknik yang berguna untuk memperluas data pelatihan model tanpa perlu mencari data tambahan. Augmentasi gambar, adalah tindakan mereplika gambar yang ada dengan berbagai penyesuaian untuk memperbanyak data latih. Model terlatih akan lebih realistis dari kondisi dunia nyata dan akan mampu beradaptasi dengan berbagai perubahan kondisi yang ada.
 
 ![image](https://user-images.githubusercontent.com/79149921/207525401-df72a39c-bb8d-486d-b183-a179da0b7acf.png)
 
