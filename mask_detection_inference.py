@@ -191,11 +191,12 @@ class Ui(QtWidgets.QMainWindow):
                     pred_image = resize(cropped_image, [IMAGE_SHAPE[0],IMAGE_SHAPE[1]], method=ResizeMethod.BICUBIC)
                     pred_image = pred_image/255.0
                     pred_image = expand_dims(pred_image, axis=0)
-                    pred = np.argmax(self.mask_model.predict(pred_image), axis=1)
+                    pred = self.mask_model.predict(pred_image)
+                    pred_L = np.argmax(pred, axis=1)
 
-                    label,color = Num2Label(pred[0])
+                    label,color = Num2Label(pred_L[0])
                     cv2.rectangle(prediction_img, face_start_point, face_end_point, color, 2)
-                    cv2.putText(prediction_img, label, face_start_point, cv2.FONT_HERSHEY_PLAIN, min(imageWidth,imageHeight)/(20/scale), color, 2, cv2.LINE_AA)
+                    cv2.putText(prediction_img, label+label+" {:.2f}".format(pred[0][pred_L[0]]), face_start_point, cv2.FONT_HERSHEY_PLAIN, min(imageWidth,imageHeight)/(30/scale), color, 2, cv2.LINE_AA)
 
                 self.img_prediction = prediction_img
                 self.showPrediction()
@@ -246,11 +247,12 @@ class CamWorker(QThread):
                     pred_image = resize(cropped_image, [IMAGE_SHAPE[0],IMAGE_SHAPE[1]], method=ResizeMethod.BICUBIC)
                     pred_image = pred_image/255.0
                     pred_image = expand_dims(pred_image, axis=0)
-                    pred = np.argmax(self.mask_model.predict(pred_image), axis=1)
+                    pred = self.mask_model.predict(pred_image)
+                    pred_L = np.argmax(pred, axis=1)
 
-                    label,color = Num2Label(pred[0])
+                    label,color = Num2Label(pred_L[0])
                     cv2.rectangle(prediction_img, face_start_point, face_end_point, color, 2)
-                    cv2.putText(prediction_img, label, face_start_point, cv2.FONT_HERSHEY_COMPLEX_SMALL, min(imageWidth,imageHeight)/(20/self.scale), color, 2, cv2.LINE_AA)
+                    cv2.putText(prediction_img, label+label+" {:.2f}".format(pred[0][pred_L[0]]), face_start_point, cv2.FONT_HERSHEY_PLAIN, min(imageWidth,imageHeight)/(30/0.1), color, 2, cv2.LINE_AA)
 
                 self.ImageSignal.emit(prediction_img)
             else:
