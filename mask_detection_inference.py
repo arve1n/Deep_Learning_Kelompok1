@@ -196,7 +196,7 @@ class Ui(QtWidgets.QMainWindow):
 
                     label,color = Num2Label(pred_L[0])
                     cv2.rectangle(prediction_img, face_start_point, face_end_point, color, 2)
-                    cv2.putText(prediction_img, label+label+" {:.2f}".format(pred[0][pred_L[0]]), face_start_point, cv2.FONT_HERSHEY_PLAIN, min(imageWidth,imageHeight)/(30/scale), color, 2, cv2.LINE_AA)
+                    cv2.putText(prediction_img, label+" {:.2f}".format(pred[0][pred_L[0]]), face_start_point, cv2.FONT_HERSHEY_PLAIN, min(imageWidth,imageHeight)/(30/scale), color, 2, cv2.LINE_AA)
 
                 self.img_prediction = prediction_img
                 self.showPrediction()
@@ -252,7 +252,7 @@ class CamWorker(QThread):
 
                     label,color = Num2Label(pred_L[0])
                     cv2.rectangle(prediction_img, face_start_point, face_end_point, color, 2)
-                    cv2.putText(prediction_img, label+label+" {:.2f}".format(pred[0][pred_L[0]]), face_start_point, cv2.FONT_HERSHEY_PLAIN, min(imageWidth,imageHeight)/(30/0.1), color, 2, cv2.LINE_AA)
+                    cv2.putText(prediction_img, label+" {:.2f}".format(pred[0][pred_L[0]]), face_start_point, cv2.FONT_HERSHEY_PLAIN, min(imageWidth,imageHeight)/(30/0.1), color, 2, cv2.LINE_AA)
 
                 self.ImageSignal.emit(prediction_img)
             else:
