@@ -47,6 +47,8 @@ Pada tahap ini akan dilakukan pengolahan dataset dengan cara mengecilkan atau me
 
 ![messageImage_1671541546376](https://user-images.githubusercontent.com/79149921/208788921-5dd7bf03-3e5f-4fbe-8e7a-7881a06d0947.jpg)
 
+Pertama pada model yang diusulkanmenerapkan model sequential. Model Sequential adalah arsitektur model digunakan untuk tumpukan lapisan (layer) di mana setiap lapisan memiliki tepat satu tensor input dan satu tensor output. Selanjutnya kita import Conv2D untuk menjalankan operasi konvolusional pada gambar latih. Langkah selanjutnya adalah pooling. Pooling bertujuan untuk mereduksi ukuran gambar sebanyak mungkin, dalam lapisan ini kita mengecilkan para gambar tumpukan ke dalam ukuran yang lebih kecil. Selanjutnya dilakukan Batch Normalization, kemudian Global Average Pooling2D.
+Berikutnya adalah proses dense, kita import Dense untuk menjalankan full connection neural network. Dense adalah fungsi untuk menambahkan layer yang fully connected. Units menandakan jumlah node yang harus ada di hidden layer, nilainya antara jumlah input node dan output node. Pada layer terakhir terdapat fungsi aktivasi softmax dengan 3 neuron, yang merepresentasikan label kelas yaitu with mask, without mask, dan mask weared incorrect.
 
 
 ### Proses Training
@@ -131,8 +133,7 @@ Akurasi : 0.9472
 Akurasi : 0.90
 
 ### Proses Evaluasi
-Metode evaluasi yang digunakan pada penelitian ini adalah dengan menggunakan Confusion Matrix. Evaluasi ini dilakukan untuk mengetahui seberapa baik model tersebut.
-Untuk mengetahui apakah model tersebut baik yaitu memiliki nilai loss yang rendah dan memiliki nilai accuracy yang tinggi (tidak overfitting dan tidak underfitting), berikut ini grafik hasil dari proses training tersebut.
+Evaluasi ini dilakukan untuk mengetahui seberapa baik model tersebut.Untuk mengetahui apakah model tersebut baik yaitu memiliki nilai loss yang rendah dan memiliki nilai accuracy yang tinggi (tidak overfitting dan tidak underfitting), berikut ini grafik hasil dari proses training tersebut.
 
 ![image](https://user-images.githubusercontent.com/79149921/207531794-54924ab4-686d-4da5-b8c6-453cdbc90e5b.png)
 
@@ -140,7 +141,7 @@ Hasil Test Set
 - Loss = 0.1544
 - Accuracy = 0.9694
 
-Berdasarkan dari Gambar tersebut, dapat disimpulkan bahwa model CNN adalah terbaik yang dapat digunakan karena model ini memiliki  nilai loss yang rendah dan memiliki nilai accuracy yang tinggi.
+Berdasarkan dari Gambar tersebut, dapat disimpulkan bahwa model CNN adalah terbaik yang dapat digunakan karena model ini memiliki nilai loss yang rendah dan memiliki nilai accuracy yang tinggi.
 
 ## Cara Menjalankan Aplikasi
 = Command Interface
