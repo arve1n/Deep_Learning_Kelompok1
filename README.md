@@ -141,7 +141,11 @@ Hasil Test Set
 - Loss = 0.1544
 - Accuracy = 0.9694
 
-Berdasarkan dari Gambar tersebut, dapat disimpulkan bahwa model CNN adalah terbaik yang dapat digunakan karena model ini memiliki nilai loss yang rendah dan memiliki nilai accuracy yang tinggi.
+Berdasarkan dari Gambar tersebut, dapat disimpulkan bahwa model CNN adalah terbaik yang dapat digunakan karena model ini memiliki nilai loss yang rendah dan memiliki nilai accuracy yang tinggi. Namun pada aplikasi kami, model yang digunakan adalah Fully CNN karena deteksi yang diberikan lebih akurat.
+
+![image](https://user-images.githubusercontent.com/79149921/207532083-b26849ab-8b58-4aad-8cc6-fc0c12e5d303.png)  ![image](https://user-images.githubusercontent.com/79149921/207532198-45798084-93f6-48ef-a24c-07a1415d8f95.png)
+
+Akurasi : 0.9129
 
 ## Cara Menjalankan Aplikasi
 = Command Interface
