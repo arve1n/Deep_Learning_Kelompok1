@@ -21,7 +21,7 @@ Pada model CNN akan terdapat beberapa lapisan (layer) untuk mengenali sebuah obj
 
 ![model arsitektur](https://user-images.githubusercontent.com/79149921/208701773-0c4224d8-d6f1-496f-a164-9b8861e0d720.png)
 
-Pada flowchart diatas layer pertama adalah melakukan input convolutional layer 2 dimensi. tahap selanjutnya yang dilakukan adalah pooling, pooling yang digunakan adalah max pooling. Misal kita gunakan max pooling 2 x 2 dengan stride 2, maka disetiap pergeseran filter, nilai maksimum pada area 2 x 2 pixel tersebut yang akan dipilih. Setelah itu barulah dilakukan Batch Normalization. Tahapan ini dilakukan sebanyak 3x, kemudian akan masuk pada tahap Global Average Pooling 2 Dimensi yang akan menghasilkan suatu output dari 3 jenis class pada dataset yaitu with mask, without mask, ataupun mask weared incorrect.
+Pada flowchart diatas layer pertama adalah melakukan input convolutional layer 2 dimensi. tahap selanjutnya yang dilakukan adalah pooling, pooling yang digunakan adalah max pooling. Misal kita gunakan max pooling 128 x 128 dengan stride 3, maka disetiap pergeseran filter, nilai maksimum pada area 128 x 128 pixel tersebut yang akan dipilih. Setelah itu barulah dilakukan Batch Normalization. Tahapan ini dilakukan sebanyak 3x, kemudian akan masuk pada tahap Global Average Pooling 2 Dimensi yang akan menghasilkan suatu output dari 3 jenis class pada dataset yaitu with mask, without mask, ataupun mask weared incorrect.
 
 
 ## Metode Penelitian
@@ -44,6 +44,9 @@ Pada tahap ini akan dilakukan pengolahan dataset dengan cara mengecilkan atau me
 
 
 ![messageImage_1671541527908](https://user-images.githubusercontent.com/79149921/208718670-ee2d72ec-8280-4ef1-ad08-867e9a0aec4b.jpg)
+
+![messageImage_1671541546376](https://user-images.githubusercontent.com/79149921/208788921-5dd7bf03-3e5f-4fbe-8e7a-7881a06d0947.jpg)
+
 
 
 ### Proses Training
